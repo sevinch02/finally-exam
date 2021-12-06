@@ -4,7 +4,7 @@ import {AiFillStar} from 'react-icons/ai'
 import { t } from 'i18next';
 
 const TrandingCard = styled.div`
-background : ${(props) => props.theme.treandingBg}
+background : ${(props) => props.theme.treandingBg};
 `
 const TreandingTitle = styled.h5`
 font-family: DM Sans;
@@ -167,9 +167,8 @@ const Trending = () => {
            
             </Row>
             </div>
-        </TrandingCard>
-       
-    )
+        </TrandingCard> 
+    );
 }
 
 export default Trending;

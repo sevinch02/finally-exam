@@ -5,6 +5,8 @@ import Hotel from '../components/Hotel';
 import SearchLocation from '../components/SearchLocation';
 import {RiLoader2Fill} from 'react-icons/ri'
 
+
+
 const HotelListPage = styled.section`
 background: ${(props)=> props.theme.hotellist};
 padding-bottom:150px;
@@ -31,6 +33,7 @@ line-height: 24px;
 background: transparent;
 `
 const HotelList = () => {
+ 
     return (
         <HotelListPage>
             <BigSearchDiv>
@@ -40,9 +43,7 @@ const HotelList = () => {
              <Row>
                  <SearchLocation/>   
                     <div>
-                        <Hotel/>
-                        <Hotel/>
-                        <Hotel/>
+                        <Hotel/>                       
                         <ViewMore type="button" ><RiLoader2Fill/> View More</ViewMore>
                     </div>
            </Row>      

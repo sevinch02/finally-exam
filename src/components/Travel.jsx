@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {AiFillStar} from 'react-icons/ai';
 import { t } from 'i18next';
 const TravelCom = styled.div`
-background: ${(props) => props.theme.featuredbg};
 padding-bottom:120px;
 `
 const TravelCard = styled.div`

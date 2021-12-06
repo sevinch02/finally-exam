@@ -148,7 +148,9 @@ const Hotel = () => {
                         </AboutHotel>
                         <Row>
                             <Price><strong style={{fontWeight: 700, fontSize:28,}}>$320</strong> For Two </Price>
-                        <BookBtn onClick={() => navigate(`/hotellist/:id`)}>Book Now </BookBtn>
+                        <BookBtn 
+                        // onClick={() => navigate(`/hotellist/:id`)}
+                        >Book Now </BookBtn>
                         </Row>
                     
                       </DivEl>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import {useTranslation} from 'react-i18next';
 import BigSearch from '../components/BigSearch';
@@ -9,7 +9,12 @@ import Explore from '../components/Explore';
 import Travel from '../components/Travel';
 import Trending from '../components/Trending'
 
+
 const HomePage = styled.div`
+background: ${ (props) => props.theme.bestPlacesBg};
+`
+
+const HomeIntro = styled.div`
 background-image: url(/img/home-background.jpg);
 background-repeat:no-repeat;
 background-size: 100% ;
@@ -38,23 +43,46 @@ position: absolute;
 ` 
 const Home = () => {
   const {t} = useTranslation();
+  // const [topTour,setToptour] = useState([]);
+
+  
+      {/* 
+        const newArr = 
+  <Swiper  spaceBetween={30} slidesPerView={4}loop >
+ {TopTour.map((el, i) => (
+    <SwiperSlide>
+      <TopTur tourobj={el}
+      key={i}
+      id={el.id}
+      name={el.name}
+      place_count={ el.country}
+      country = {el.country}
+      photo ={el.photo}
+    />
+    </SwiperSlide>
+  ))}
+</Swiper>
+
+      */}
   return (
     <HomePage>
+    <HomeIntro>
       <div className="container">
         <BoxText>
           {t('intro_text')}
         </BoxText> </div>
         <Div>  <BigSearch/> </Div> 
-       
+        </HomeIntro>
        
       <BestPlaces/>
       <Featured/>
       <TopTur/>
+
       <Explore/>
       <Trending/>
       <Travel/>
     
-    </HomePage>
+      </HomePage>
   );
 }
 

@@ -1,12 +1,15 @@
 import { t } from 'i18next';
-import React from 'react';
+import React , {useState , useEffect} from 'react';
 import styled from 'styled-components';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {IoIosArrowDropleft} from 'react-icons/io';
-import {IoIosArrowDropright} from 'react-icons/io'
+import {IoIosArrowDropright} from 'react-icons/io';
+import apiCalls from '../config/api';
+import { useParams } from "react-router-dom";
+import SwiperCore, { Navigation} from 'swiper';
+
 
 const TopTurPage = styled.section `
-background: ${(props) => props.theme.bestPlacesBg};
 color: ${(props) => props.theme.bestPlacesColor};
 padding-bottom:23px
 `
@@ -36,7 +39,6 @@ Width :113px;
 Height :50px;
 padding: 12px 32px;
 color: #E9EBF3
-
 `
 const SpanEl = styled.span`
 position:absolute;
@@ -66,69 +68,55 @@ line-height: 36px;
 color: ${(props) => props.theme.titleP}
 `
 const TopTur = () => {
+
+  // const {id} = useParams();
+  const [error, setError] = useState('');
+  const [tour, setTour] = useState([]);
+
+  useEffect(() => {
+    const getTours = async () => {
+      try {
+        const data = await apiCalls.getTours();
+        setTour(data);
+        console.log(data)
+      } catch (error) {
+          setError(error.message);
+      };
+    };  
+    getTours();  
+}, []);
+const mappedTour = 
+<Swiper  spaceBetween={30}slidesPerView={3}loop  modules={[Navigation]}
+navigation={{
+  nextEl:'.my-swiper-button-next',
+  prevEl: '.my-swiper-button-prev'
+}}
+> 
+{tour.map( el => (
+    <SwiperSlide>
+    <Card>
+         <CardImg src={el.photo} alt={el.name} />
+             <CardText>
+               <CardSpan>{el.name}</CardSpan>
+               <CardTitle>{el.country}</CardTitle>
+                <SpanEl>{el.place_count } Popular Places</SpanEl>
+             </CardText>       
+        </Card> 
+        </SwiperSlide>
+  ))}
+</Swiper>
+
+
   return (
-    <TopTurPage >
+    <TopTurPage>
       <div className="container">
           <Title>{t("Top_tour")}</Title> 
           <TitleP>{t("Camp_calm")}</TitleP>
            <Icons>
-              <IoIosArrowDropleft style={{color: "#84878B",width: 38, height:38,}} />
-              <IoIosArrowDropright style={{color: "#84878B",width: 38, height:38,}} /> 
+              <IoIosArrowDropleft className="my-swiper-button-prev" style={{color: "#84878B",width: 38, height:38,}} />
+              <IoIosArrowDropright className="my-swiper-button-next" style={{color: "#84878B",width: 38, height:38,}} /> 
            </Icons>  
-          <Swiper spaceBetween={30} slidesPerView={3}>
-      
-          <SwiperSlide>
-            <Card>
-              <CardImg  src="/img/toptur-img.jpg" />
-                <CardText>
-                  <CardSpan>Japan </CardSpan>
-                  <CardTitle>Japan</CardTitle>
-                  <SpanEl>10 Popular Places </SpanEl>
-              </CardText>
-            </Card>
-          </SwiperSlide>
-                  
-        <SwiperSlide>
-                    <Card>
-                      <CardImg  src="/img/indonesia.jpg" />
-                      <CardText>
-                        <CardSpan>Indonesia </CardSpan>
-                        <CardTitle>Bali</CardTitle>
-                        <SpanEl>10 Popular Places </SpanEl>
-                      </CardText>
-                    </Card>
-        </SwiperSlide>
-        <SwiperSlide>
-                    <Card>
-                      <CardImg  src="/img/barselonia.jpg" />
-                      <CardText>
-                        <CardSpan>Barcelona </CardSpan>
-                        <CardTitle>Spain</CardTitle>
-                        <SpanEl>10 Popular Places </SpanEl>
-                      </CardText>
-                    </Card>
-        </SwiperSlide>
-        <SwiperSlide>
-            <Card>
-               <CardImg  src="/img/barselonia.jpg" />
-              <CardText>
-                  <CardSpan>Barcelona </CardSpan>
-                  <CardTitle>Spain</CardTitle>
-                  <SpanEl>10 Popular Places </SpanEl>
-              </CardText>
-            </Card>
-        </SwiperSlide>
-         <SwiperSlide>
-             <Card> 
-                 <CardImg  src="/img/toptur-img.jpg" />
-                    <CardText>
-                        <CardSpan>Japan </CardSpan>
-                        <CardTitle>Japan</CardTitle>
-                        <SpanEl>10 Popular Places </SpanEl>
-                    </CardText>
-              </Card>
-          </SwiperSlide>
-         </Swiper>
+           {mappedTour}
       </div>
     </TopTurPage>
   );

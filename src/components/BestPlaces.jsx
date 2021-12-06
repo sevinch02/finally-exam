@@ -4,7 +4,6 @@ import { t } from 'i18next';
 
 const BestPlacesContent = styled.section `
   padding-top:150px;
-  background: ${ (props) => props.theme.bestPlacesBg};
   color: ${ (props) => props.theme.bestPlacesColor};
   padding-bottom:40px;
 `
@@ -35,9 +34,9 @@ Width :270px;
 Height :205px;
 padding-top: 31px;
 padding-left:30px;
+margin-top:40px;
 color: ${(props) => props.theme.cardImgColor}
 background-color:${(props)=> props.theme.bestPlacesBg}
-margin-top:60px;
 &:hover{
   border:none;
   background: #FFFFFF;
@@ -49,6 +48,7 @@ const CardImgImg =styled.img`
 border-radius:10px;
 Width:70px;
 Height:70px;
+
 
 `
 const CardTitle = styled.h5`

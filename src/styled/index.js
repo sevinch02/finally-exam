@@ -109,7 +109,7 @@ export const LightTheme = {
     featText:"#3B3E44",
     footerBg:"#F4F5F6",
     footerLogo: "#222529",
-    bestPlacesBg: "#E5E5E5;",
+    bestPlacesBg: "#FFF;",
     treandingBg: "#F5F5F5",
     bestcolor:"#23262F",
     cardImgColor: "#3B3E44",

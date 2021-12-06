@@ -1,4 +1,4 @@
-import React from 'react';
+import React  , {useState , useEffect} from 'react';
 import styled from 'styled-components';
 import {AiFillStar} from 'react-icons/ai';
 import { t } from 'i18next';
@@ -7,10 +7,13 @@ import {HiOutlineOfficeBuilding} from "react-icons/hi"
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {IoIosArrowDropleft} from 'react-icons/io';
 import {IoIosArrowDropright} from 'react-icons/io'
+import apiCalls from '../config/api';
+import { useParams } from "react-router-dom";
+import SwiperCore ,{Navigation} from 'swiper'
 
 const ExploreContent = styled.article`
 padding-top:61px;
-background: ${(props) => props.theme.bestPlacesBg};
+
 `
 const Title = styled.h4`
 font-family: DM Sans;
@@ -82,128 +85,66 @@ margin-top: -66px;
 margin-bottom: 47px;
 `
 const Explore = () => {
+SwiperCore.use([Navigation]);
+
+    const [error, setError] = useState('');
+    const [world, setWorld] = useState([]);
+
+    useEffect(() => {
+        const getExplore = async () => {
+          try {
+            const data = await apiCalls.getExplore();
+            setWorld(data);
+            console.log(data)
+          } catch (error) {
+              setError(error.message);
+          };
+        };  
+        getExplore();  
+    }, []);
+    const mappedWorld = 
+<Swiper  spaceBetween={30} slidesPerView={4}loop 
+ modules ={[Navigation]}
+ navigation={{
+    nextEl: '.my-swiper-button-next',
+    prevEl: '.my-swiper-botton-prev',
+ }}
+ > 
+{world.map( el => (
+    <SwiperSlide>
+       <Card>
+              <CardImg src={el.image} alt="explore" />
+              <CardSpan>
+                  <AiFillStar style={{color:"#FFD166"}} />
+                  <CardSpanItem> <strong>4.91 </strong> (147)</CardSpanItem> 
+              </CardSpan>
+              <CardDiv>
+                  <CardDivTitle>{t("Comfort_Space")}</CardDivTitle>
+                  <CardDivSpan>$210</CardDivSpan>
+              </CardDiv>
+              <Location>{t("ToTown_Center")}</Location>
+               <Info>
+                  <GrLocation/>
+                  <Location>Turkey, Mamaris</Location>
+                </Info>
+                <></>
+                <HiOutlineOfficeBuilding/> 
+                 <Location>{t("Rooms")}</Location>
+            
+              </Card>
+        </SwiperSlide>
+  ))};
+</Swiper>
     return (
         <ExploreContent>
           <div className="container">
             <Title>{t("Explore_Title")}</Title>
             <Location>{t("Explore_text")}</Location>
             <Icons>
-              <IoIosArrowDropleft style={{color: "#84878B",width: 38, height:38,}} />
-              <IoIosArrowDropright style={{color: "#84878B",width: 38, height:38,}} /> 
+              <IoIosArrowDropleft className="my-swiper-button-prev"  style={{color: "#84878B",width: 38, height:38,}} />
+              <IoIosArrowDropright className="my-swiper-button-next" style={{color: "#84878B",width: 38, height:38,}} /> 
            </Icons> 
-
-           <Swiper spaceBetween={30} slidesPerView={4}>
-      
-      <SwiperSlide>
-      <Card>
-              <CardImg src="/img/explore-img.png" alt="explore" />
-              <CardSpan>
-                  <AiFillStar style={{color:"#FFD166"}} />
-                  <CardSpanItem> <strong>4.91 </strong> (147)</CardSpanItem> 
-              </CardSpan>
-              <CardDiv>
-                  <CardDivTitle>{t("Comfort_Space")}</CardDivTitle>
-                  <CardDivSpan>$210</CardDivSpan>
-              </CardDiv>
-              <Location>{t("ToTown_Center")}</Location>
-               <Info>
-                  <GrLocation/>
-                  <Location>Turkey, Mamaris</Location>
-                </Info>
-                <></>
-                <HiOutlineOfficeBuilding/> 
-                 <Location>{t("Rooms")}</Location>
-            
-              </Card>
-      </SwiperSlide>
-    <SwiperSlide>
-    <Card>
-              <CardImg src="/img/exsplore2.jpg" alt="explore" />
-              <CardSpan>
-                  <AiFillStar style={{color:"#FFD166"}} />
-                  <CardSpanItem> <strong>4.91 </strong> (147)</CardSpanItem> 
-              </CardSpan>
-              <CardDiv>
-                  <CardDivTitle>{t("Comfort_Space")}</CardDivTitle>
-                  <CardDivSpan>$210</CardDivSpan>
-              </CardDiv>
-              <Location>{t("ToTown_Center")}</Location>
-               <Info>
-                  <GrLocation/>
-                  <Location>Turkey, Mamaris</Location>
-                </Info>
-                <></>
-                <HiOutlineOfficeBuilding/> 
-                 <Location>{t("Rooms")}</Location>
-            </Card>
-    </SwiperSlide>
-    <SwiperSlide>
-    <Card>
-              <CardImg src="/img/exsplore3.jpg" alt="explore" />
-              <CardSpan>
-                  <AiFillStar style={{color:"#FFD166"}} />
-                  <CardSpanItem> <strong>4.91 </strong> (147)</CardSpanItem> 
-              </CardSpan>
-              <CardDiv>
-                  <CardDivTitle>{t("Comfort_Space")}</CardDivTitle>
-                  <CardDivSpan>$210</CardDivSpan>
-              </CardDiv>
-              <Location>{t("ToTown_Center")}</Location>
-               <Info>
-                  <GrLocation/>
-                  <Location>Turkey, Mamaris</Location>
-                </Info>
-                <></>
-                <HiOutlineOfficeBuilding/> 
-                 <Location>{t("Rooms")}</Location>
-            
-              </Card>     
-    </SwiperSlide>
-    <SwiperSlide>
-    <Card>
-              <CardImg src="/img/eksplore5.jpg" alt="explore" />
-              <CardSpan>
-                  <AiFillStar style={{color:"#FFD166"}} />
-                  <CardSpanItem> <strong>4.91 </strong> (147)</CardSpanItem> 
-              </CardSpan>
-              <CardDiv>
-                  <CardDivTitle>{t("Comfort_Space")}</CardDivTitle>
-                  <CardDivSpan>$210</CardDivSpan>
-              </CardDiv>
-              <Location>{t("ToTown_Center")}</Location>
-               <Info>
-                  <GrLocation/>
-                  <Location>Turkey, Mamaris</Location>
-                </Info>
-                <></>
-                <HiOutlineOfficeBuilding/> 
-                 <Location>{t("Rooms")}</Location>
-            
-              </Card> 
-    </SwiperSlide>
-     <SwiperSlide>
-     <Card>
-              <CardImg src="/img/explore-img.png" alt="explore" />
-              <CardSpan>
-                  <AiFillStar style={{color:"#FFD166"}} />
-                  <CardSpanItem> <strong>4.91 </strong> (147)</CardSpanItem> 
-              </CardSpan>
-              <CardDiv>
-                  <CardDivTitle>{t("Comfort_Space")}</CardDivTitle>
-                  <CardDivSpan>$210</CardDivSpan>
-              </CardDiv>
-              <Location>{t("ToTown_Center")}</Location>
-               <Info>
-                  <GrLocation/>
-                  <Location>Turkey, Mamaris</Location>
-                </Info>
-                <></>
-                <HiOutlineOfficeBuilding/> 
-                 <Location>{t("Rooms")}</Location>
-            
-              </Card>
-      </SwiperSlide>
- </Swiper>
+             {mappedWorld}
           </div>   
         </ExploreContent>
        

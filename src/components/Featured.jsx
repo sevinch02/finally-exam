@@ -32,7 +32,7 @@ display:flex;
 flex-direction: row;
 `
 const FeaturedPage = styled.section`
-background: ${(props) => props.theme.featuredbg};
+
 `
 const TitletextTitle = styled.h2`
 font-family: DM Sans;

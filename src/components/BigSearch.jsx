@@ -145,7 +145,6 @@ const BigSearch = () => {
       <WrapperTabsContent>
         <div id="item1">
         <Forma onChange={HandleSubmit}>
-        
         <Row>
           <DivFormEl>
             <LabelEl htmlFor="">Location</LabelEl> <br />
