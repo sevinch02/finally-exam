@@ -1,19 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from "styled-components";
 import {useTranslation} from 'react-i18next';
-import BigSearch from '../components/BigSearch';
-import Featured from '../components/Featured';
-import TopTur from '../components/TopTur';
-import BestPlaces from '../components/BestPlaces';
-import Explore from '../components/Explore';
-import Travel from '../components/Travel';
-import Trending from '../components/Trending'
-
+import BigSearch from '../components/BigFilter/BigSearch';
+import Featured from '../components/Fedtured/Featured';
+import TopTur from '../components/TopTurs/TopTur';
+import BestPlaces from '../components/./BestPlace/BestPlaces';
+import Explore from '../components/Explore/Explore';
+import Travel from '../components/Travel/Travel';
+import Trending from '../components/Trainding/Trending';
 
 const HomePage = styled.div`
 background: ${ (props) => props.theme.bestPlacesBg};
 `
-
 const HomeIntro = styled.div`
 background-image: url(/img/home-background.jpg);
 background-repeat:no-repeat;
@@ -36,34 +34,13 @@ min-height:500px;
 padding-top: 100px;
 `
 const Div = styled.div`
-// background: ${ (props) => props.theme.bestPlacesBg};
 position: absolute;
     top: 412px;
     left: 79px;
 ` 
 const Home = () => {
   const {t} = useTranslation();
-  // const [topTour,setToptour] = useState([]);
 
-  
-      {/* 
-        const newArr = 
-  <Swiper  spaceBetween={30} slidesPerView={4}loop >
- {TopTour.map((el, i) => (
-    <SwiperSlide>
-      <TopTur tourobj={el}
-      key={i}
-      id={el.id}
-      name={el.name}
-      place_count={ el.country}
-      country = {el.country}
-      photo ={el.photo}
-    />
-    </SwiperSlide>
-  ))}
-</Swiper>
-
-      */}
   return (
     <HomePage>
     <HomeIntro>
@@ -73,16 +50,14 @@ const Home = () => {
         </BoxText> </div>
         <Div>  <BigSearch/> </Div> 
         </HomeIntro>
-       
-      <BestPlaces/>
-      <Featured/>
-      <TopTur/>
-
-      <Explore/>
-      <Trending/>
-      <Travel/>
-    
-      </HomePage>
+        <BestPlaces/>
+        <Featured/>
+        <TopTur/>
+        <Explore/>
+        <Trending/>
+        <Travel/>
+      
+        </HomePage>
   );
 }
 

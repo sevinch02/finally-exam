@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProfileCard from '../components/ProfileCard';
-import AccountCard from '../components/AccountCard';
-
+import ProfileCard from '../components/ProfileCard/ProfileCard';
+import AccountCard from '../components/AccountCard/AccountCard'
 const ProfilePage = styled.section`
 background: ${(props) => props.theme.myProfile};
 padding-top: 100px;

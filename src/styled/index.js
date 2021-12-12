@@ -28,7 +28,7 @@ export const DarkTheme = {
     fontSize: '10px',
     boxShadow: "0px 2px 2px rgba(67, 67, 67, 0.1);",
     ThemaBg: "#474A52",
-    MainHeaderBg: "#222529",
+    MainHeaderBg:"#222529",
     LogoColor:"#FFF",
     intoText: "#3B3E44",
     featuredbg: "#141416",
@@ -45,7 +45,7 @@ export const DarkTheme = {
     completeTitle:"#E7ECF3",
     bgCard : "#222529",
     CardBoxShadow : "0px 15px 45px rgba(102, 102, 102, 0.1)",
-    CardBorder: " 1px solid #3B3E44",
+    CardBorder: "1px solid #3B3E44",
     exTitle: '#fff',
     searchLocationBg: "#141416",
     popularItem: '#E7ECF3',
@@ -88,8 +88,9 @@ export const DarkTheme = {
     DetalistStrong: '#FCFCFD',
     DetalistItems : '#E7ECF3',
     DetalistItemsSpan : "#848788",
-    titleP : "#B1B5C4"
-  
+    titleP : "#B1B5C4",
+    CardTitle: '#E7ECF3',
+    activeSpan: '#848788'
 
 };
 
@@ -154,15 +155,16 @@ export const LightTheme = {
     AboutRoomTimeSpan: '#84878B',
     BookedItemscolor: '#84878B',
     checkIn : '#B1B5C4',
-    formInputBg:'F4F5F6',
+    formInputBg:'#F4F5F6',
     formInputBorder:' 1px solid #878CFF',
     CreaditBtn:"#FFFFFF",
     dateStrong: "#353945",
     DetalistStrong: '#23262F',
     DetalistItems : '#777E91',
     DetalistItemsSpan : "#353945",
-    titleP : "#777E90"
-    
+    titleP : "#777E90",
+    CardTitle: '#3B3E44',
+    activeSpan: '#B1B5C4'
  
     
     

@@ -1,4 +1,6 @@
 import axiosClient from './axiosClient';
+
+
 const apiCalls = {
     getTours: () => {
         return axiosClient.get(`tours`);
@@ -9,8 +11,14 @@ const apiCalls = {
     getcities: () => {
         return axiosClient.get(`cities`);
     },
-    gethotels: (id) => {
+    gethotels: () => {
+        return axiosClient.get(`hotels`);
+    },
+    getHotelsDetailes: (id) => {
         return axiosClient.get(`hotels/${id}`);
     },
+    getBestPlace: () => {
+        return axiosClient.get(`bestPlace`);
+    }
 };
 export default apiCalls;
