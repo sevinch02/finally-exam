@@ -8,13 +8,13 @@ import apiCalls from '../../config/api';
 import {useTranslation} from 'react-i18next';
 import {useState , useEffect} from "react";
 import {Link} from 'react-router-dom';
+import {Loader} from '../TopTurs/TopTur';
 import {ConfirmContent,BigRow,ConfirmTitle,Tour,TourTitle,TourSpan,CreaditCards} from './styled';
 import {CreaditCardsRow,CreaditBtn,Row,VisaCards,VisaCard,VisaCardContent,VisaCard2} from './styled';
 import {CardForm,FormInput,InputDiv,InputIcon,Div,Label,FormRow,DateInput,VisaRow} from './styled';
 import {CardNumber,SaveDiv,ConfirmBtn,BookedDetalist,DetalistTitleText,CardSpanItem} from './styled'
 import {ImgDiv,Img,Booked,BookedTitle,AboutRoom,AboutRoomTime,AboutRoomBed,AboutRoomTimeSpan} from './styled'
 import {Line,BookedItems,BookedItemsStrong} from './styled'
-
 
 
 const Confirm = () => {
@@ -31,26 +31,32 @@ const Confirm = () => {
       };
       const { t } = useTranslation();
       const [error,setError] = useState('');
+      const [isLoading, setIsLoading] = useState(true);
 
       const [confirm,setConfirm] = useState({});
       const {id} = useParams();
 
       useEffect(() => {
-        const getHotelsDetailes = async () => {
+          setTimeout(() => {
+         const getHotelsDetailes = async () => {
           try {
             const data = await apiCalls.getHotelsDetailes(id);
             setConfirm(data);
-            console.log(data)
+            setIsLoading(false);
           } catch (error) {
-              setError(error.message);
+            setIsLoading(false);
+            setError(error.message);
           };
         };  
         getHotelsDetailes();
+    },100)
     }, [id]);
     
     return (
         <ConfirmContent>  
-            {error? error : <ConfirmContent/>}     
+            {error ? error : isLoading } 
+            {isLoading ? <Loader/> : <ConfirmContent/> }    
+
             <BigRow>
                 
                 <Row>  

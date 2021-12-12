@@ -4,7 +4,7 @@ export const Card = styled.div`
 Width:408px;
 height:846px;
 background: ${(props) => props.theme.MainHeaderBg};
-border: 1px solid #EAEAEA;
+border: ${(props) => props.theme.Hotelborder};
 box-sizing: border-box;
 border-radius: 20px;
 padding:20px 44px;

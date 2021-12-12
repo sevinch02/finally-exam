@@ -23,7 +23,6 @@ font-family: DM Sans;
 font-weight: 400;
 font-size: 16px;
 line-height: 24px;
-// color: #B1B5C4;
 border:none;
 outline:none;
 width:100%;
@@ -33,6 +32,7 @@ export const SearchBarIcon = styled.span`
 position:absolute;
 top:12px;
 right:25px;
+color:#DADADA;
 `
 export const SeeMore = styled.p`
 font-family: DM Sans;

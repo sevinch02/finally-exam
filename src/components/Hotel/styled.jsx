@@ -68,7 +68,7 @@ margin-left:16px;
 color: ${(props)=> props.theme.aboutHotelItem};
 `
 export const Price = styled.span `
-background: #F4F5F6;
+background: ${(props) => props.theme.formInputBg};
 border-radius: 37px;
 padding:4px 19px;
 margin-bottom:20px;

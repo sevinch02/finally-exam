@@ -36,12 +36,12 @@ const Footer = () => {
              
                <FooterLogoText>{t("team")}</FooterLogoText>
             
-              <Button onClick={() => toggleTheme(theme === 'light' && 'dark'  )}>
-              <MdLightMode/>
+              <Button onClick={() => toggleTheme(theme === 'dark' ? 'light' : 'dark'  )}>
+              <MdLightMode/>  
               </Button> {console.log(Button)}
               <ButtonLight onClick={() => toggleTheme(theme === 'light' ? 'dark' : 'light'  )}>
               <BsMoon/> </ButtonLight> 
-               
+              
                  
             </FooterLogo>
              

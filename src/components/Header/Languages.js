@@ -1,37 +1,38 @@
 import i18next from 'i18next';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 const DivEl = styled.div`
-display:flex;
-// flex-direction: column;
+display:flex; 
 `;
-const DivButton = styled.div`
-background:red;
+const Button = styled.button`
+border:none;
+outline:none;
+margin:0 6px;
+background:transparent;
 `
+const Img = styled.img`
+width:20px;
+height:20px;
 
+`
 const Languages = () => {
-  
-    const { t } = useTranslation();
+    
     return ( 
-         <DivEl>
-                <DivButton>
-                  <button type="button" onClick={() => {
+         <DivEl  >
+            <Button  type="button" onClick={() => {
                     i18next.changeLanguage('ru');
-                  }}>{t('ru')}</button>
-                  </DivButton>
-                  <DivButton> 
-                         <button type="button" onClick={() => {
-                             i18next.changeLanguage('en');
-                              }}>{t('en')}</button> </DivButton>
-              <DivButton>
-            <button type="button" onClick={() => {
+                  }}> <Img src="/img/ru.png"  alt="ru flag" />
+            </Button>  
+            <Button  type="button" onClick={() => {
+                   i18next.changeLanguage('en');
+                    }}> <Img src="/img/en.png" alt="en flag" />
+            </Button> 
+            <Button  type="button" onClick={() => {
                     i18next.changeLanguage('uz');
-                  }}>{t('uz')}</button> </DivButton>
+                  }}> <Img src="/img/uz.png" alt="uz flag "/>
+            </Button> 
+            
           </DivEl> 
-        
     );
-
 }
-
 export default Languages;

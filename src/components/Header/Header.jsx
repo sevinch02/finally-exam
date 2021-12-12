@@ -27,7 +27,7 @@ const Header = () => {
            <Profile>
               <ProfileImg src="/img/avatar.jpg" alt="" />
               <ProfileText>Delowar</ProfileText>
-              <Testrop/>
+              <Testrop />
             </Profile>  
      </HeaderLeft>
       </Row>

@@ -13,15 +13,15 @@ height:248px;
 border-radius:25px;
 `
 export const Get = styled.div`
-Width:371px;
-Height:124px;
+max-Width:371px;
+max-Height:124px;
 margin:62px 80px;
 
 `
 export const GetTitle = styled.h4`
 font-family: Gilroy;
 font-weight: 800;
-font-size: 44px;
+font-size: 40px;
 line-height: 52px;
 letter-spacing: -0.5px;
 color: #FFFFFF;

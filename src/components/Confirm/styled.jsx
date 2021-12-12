@@ -115,13 +115,15 @@ border:${(props) => props.theme.formInputBorder};
 box-sizing: border-box;
 border-radius: 10px;
 margin-top:12px;
+padding-left:12px;
 `
 export const InputDiv = styled.div`
 position:relative;
+
 `
 export const InputIcon = styled.span`
 position:absolute;
-top:20px;
+top:24px;
 right:30px;
 `
 export const Div = styled.div`

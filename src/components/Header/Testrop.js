@@ -42,7 +42,7 @@ const Drop =()=>{
   
     return (
       <li >
-        <Link to="#" onClick={() => setOpen(!open)}>
+        <Link  style={{color:"#000", marginLeft:17}} to="#" onClick={() => setOpen(!open)}>
           {props.icon}
         </Link>
   

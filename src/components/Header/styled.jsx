@@ -22,8 +22,8 @@ export const Badge = styled.span`
 Width :9px;
 Height:9px;
 position:absolute;
-top:0;
-left:165px;
+top:3px;
+left:201px;
 background-color:red;
 border-radius:50%;
 color:#fff;

@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+
 import React from 'react'
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,7 @@ const Subscribe = () => {
     e.preventDefault();
     console.log(emailRef.current.value)
 }
-const {t} = useTranslation(); 
+const { t } = useTranslation(); 
     return (
         <SubscribeContent>
             <Row>
