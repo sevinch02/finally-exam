@@ -36,18 +36,24 @@ display:flex;
 margin-bottom:40px;
 background: ${(props) => props.theme.searchLocationBg};
 `
-export const Img1 = styled.div`
+export const Img1 = styled.img`
 Width:742px;
 Height:632px;
 margin-right:12px;
-
+border-top-left-radius: 58px;
+border-bottom-left-radius: 58px;
 
 `
 export const Img2 = styled.img`
 Width:482px;
 Height:200px;
 margin-bottom:15px;
-background: ${(props) => props.theme.searchLocationBg};
+&:nth-child(1){
+  border-top-right-radius: 58px;  
+}
+&:nth-child(3){
+  border-bottom-right-radius: 58px;  
+}
 `
 export const HotelsSpecials = styled.div`
 margin-bottom:20px;

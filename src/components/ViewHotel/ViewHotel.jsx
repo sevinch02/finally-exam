@@ -20,7 +20,7 @@ import {HiOutlineOfficeBuilding} from 'react-icons/hi';
 import {MdStar} from 'react-icons/md';
 import {MdStarHalf} from 'react-icons/md';
 import {ViewCard,Title,HotelreviewDiv,ReviewReating,ReviewReatingSpan,Location} from './styled';
-import {HotelImg,Img1,Img2,HotelsSpecials,HotelsSpecial,HotelsSpecial2,HotelsSpecial3} from './styled';
+import {HotelImg,Img1,Img2, HotelsSpecials,HotelsSpecial,HotelsSpecial2,HotelsSpecial3} from './styled';
 import {HotelsSpecial4,HotelsSpecial5,HotelsSpecial6,RoomTitle,RoomText,Body,TabsContent} from './styled';
 import {TabsUl,WrapperTabsContent,Item1,Item2,Item3,ALink,Features} from './styled';
 import {DesContent,FeaturesSpan,FeaturesTitle,Row,Aminities,AmenitiesUl,AmenitiesLinks} from './styled';
@@ -67,12 +67,12 @@ import {AmenitiesTitle,BtnMore,RightContent} from './styled';
             </Location>
       </HotelreviewDiv>
       <HotelImg>
-        <Img1>
-        <img src="/img/hotelDetalist1.jpg" alt="hotel-img" /></Img1>
+       
+        <Img1 src="/img/first-detail.jpg" alt="hotel-img" />
           <div>
-             <Img2 src="/img/hotelDetalist2.jpg" alt="hotel-img" />
+             <Img2 src="/img/second-detail.jpg" alt="hotel-img" />
              <Img2 src="/img/hotelDetalist3.jpg" alt="hotel-img" />
-             <Img2 src="/img/hotelDetalist4.jpg" alt="hotel-img" />
+             <Img2 src="/img/detail3.jpg" alt="hotel-img" />
          </div>
       </HotelImg>
 
