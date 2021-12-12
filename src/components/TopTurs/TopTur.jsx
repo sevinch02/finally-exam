@@ -79,7 +79,7 @@ const TopTur = () => {
                   </SwiperSlide>
             ))}
           </Swiper> }
-          {(isLoading && error) && <div>{<Loader/>}</div>} 
+          {error? error : isLoading}
           {isLoading ? <Loader/> : <Swiper/>}
       </div>
     </TopTurPage>

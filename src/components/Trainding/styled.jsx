@@ -25,7 +25,8 @@ Height :216px;
 background: ${(props)=> props.theme.bgCard};
 padding:24px;
 display:flex;
-margin-bottom:35px
+margin-bottom:35px;
+border-radius: 20px;
 `
 export const Image = styled.img`
 border-radius:18px;
@@ -48,7 +49,6 @@ font-family: DM Sans;
 font-weight: 400;
 font-size: 16px;
 line-height: 24px;
-text-align: center;
 color: ${(props)=> props.theme.DescontentColor}; 
 margin-top:22px;
 `
@@ -59,9 +59,11 @@ export const Strong = styled.strong`
 color:${(props) => props.theme.Datalabel};
 `
 export const Button = styled.button`
+Width:99px;
+Height:33px;
 background: #316BFF;
 border-radius: 6px;
-padding:7px 16px;
+padding:4px 6px;
 border:none;
 outline:none;
 color:#fff;

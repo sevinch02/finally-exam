@@ -90,7 +90,8 @@ export const DarkTheme = {
     DetalistItemsSpan : "#848788",
     titleP : "#B1B5C4",
     CardTitle: '#E7ECF3',
-    activeSpan: '#848788'
+    activeSpan: '#848788',
+    reverseboreder: "none",
 
 };
 
@@ -164,7 +165,8 @@ export const LightTheme = {
     DetalistItemsSpan : "#353945",
     titleP : "#777E90",
     CardTitle: '#3B3E44',
-    activeSpan: '#B1B5C4'
+    activeSpan: '#B1B5C4',
+    reverseboreder: "1px solid #F0EFEF",
  
     
     

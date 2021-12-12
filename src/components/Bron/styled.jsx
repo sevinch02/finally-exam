@@ -26,6 +26,13 @@ line-height: 21px;
 color: #84878B;
 `
 export const Room = styled.span`
+margin-left:50px;
+font-family: DM Sans;
+font-weight: 500;
+font-size: 14px;
+line-height: 21px;
+color:${(props) => props.theme.DescontentColor};
+
 `
 export const Info = styled.div`
 display:flex;
@@ -59,7 +66,7 @@ color: #84878B;
 export const Detalist = styled.div`
 width:380px;
 background:${(props) => props.theme.formInputBg};
-border: 1px solid #F0EFEF;
+border: ${(props) => props.theme.reverseboreder};
 box-sizing: border-box;
 border-radius: 10px;
 padding:25px 37px;
