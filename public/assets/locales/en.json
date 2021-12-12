@@ -34,8 +34,6 @@
     "Email_address":"Email address",
     "data_of_birth":"Data of birth",
     "Gender":"Gender",
-    "Get_offers" :"Get our pro offers ",
-    "Get_offers_text": "Create a visual identity for your company, and an overall brand",
     "Search_best_place": "Search a best place in the world",
     "Search_best_places_text": "Whether you’re looking for places for a vacation. We are here to Guide you about the details you need to check in and ease your trips in advance",
     "Aside": "Search location or property",
@@ -76,7 +74,9 @@
     "Travel_text" : "Most Brilliant reasons Entrada should be your one-stop-shop!",
     "Hotel_features" : "Hotel features",
     "Paymet_First_Title": "Congratulations!",
-    "Paymet_Second_Title":"Your trip has been booked!"
+    "Paymet_Second_Title":"Your trip has been booked!",
+    "Get_our_pro_offers" : "Get our pro offers",
+    "Get_offers_text":"Create a visual identity for your company, and an overall brand"
 
 
 }
